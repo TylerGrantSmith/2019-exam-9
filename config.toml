@@ -1,9 +1,12 @@
 theme = "hugo-theme-learn"
-baseURL = "http://example.org/"
+author = "Tyler Grant Smith"
+#disableSearch = true
+baseURL = ""
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "2019 Exam 9"
 publishDir = "public"
 relativeurls = true
+#ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
