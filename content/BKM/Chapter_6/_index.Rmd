@@ -23,6 +23,6 @@ knitr::opts_chunk$set(echo = FALSE)
 * Risk Neutral
   + Definition
 
-{{% notice note %}}
+{{% notice definition %}}
 This is just a note
 {{% /notice %}}

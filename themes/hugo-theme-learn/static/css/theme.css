@@ -530,6 +530,14 @@ div.notices.tip p {
 div.notices.tip p:first-child:after {
     content: 'Tip';
 }
+div.notices.definition p {
+    border-top: 30px solid rgba(80, 130, 80, 0.5);
+    background: #E6F9E6;
+}
+div.notices.definition p:first-child:after {
+    content: 'Definition';
+}
+
 
 /* attachments shortcode */
 
