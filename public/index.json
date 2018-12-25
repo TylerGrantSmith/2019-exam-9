@@ -1,12 +1,5 @@
 [
 {
-	"uri": "/",
-	"title": "2019 Exam 9",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -14,11 +7,11 @@
 	"content": ""
 },
 {
-	"uri": "/_index.utf8/",
+	"uri": "/",
 	"title": "Exam 9, 2019",
 	"tags": [],
 	"description": "",
-	"content": " Spring 2019 Exam 9 This is a notes website.\n"
+	"content": "\rSpring 2019 Exam 9\rThis is a notes website.\n\r"
 },
 {
 	"uri": "/tags/",

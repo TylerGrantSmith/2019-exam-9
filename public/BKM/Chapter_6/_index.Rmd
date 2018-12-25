@@ -1,0 +1,28 @@
+---
+weight: 2
+title: "Chapter 6"
+author: "Ming Chen"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 6.1 Risk and Risk Aversion
+
+* Risk premium
+  + Definition
+* Fair Game
+  + Definition
+* Utility
+  + Definition
+* Certainty Equivalent Rate
+  + Definition
+* Risk Neutral
+  + Definition
+
+{{% notice definition %}}
+This is just a note
+{{% /notice %}}
