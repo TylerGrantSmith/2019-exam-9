@@ -11,15 +11,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 6.1 Risk and Risk Aversion
 
-```{r}
+```{r fig.cap='diamonds plot with ggplot2.', tidy=FALSE}
 library(ggplot2)
 library(magrittr)
 library(fbhelpers)
 library(latex2exp)
 
 x <- -100:100
-dat <- data.frame(x,y=3x^2)
 f <- function(x) 3*x^2
+dat <- data.frame(x,y=f(x))
 dat %>% 
   ggplot(aes(x,y)) + 
     #geom_point()+

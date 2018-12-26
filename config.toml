@@ -1,7 +1,7 @@
 theme = "hugo-theme-learn"
 author = "Tyler Grant Smith"
 #disableSearch = true
-baseURL = ""
+baseURL = "/"
 languageCode = "en-us"
 title = "2019 Exam 9"
 publishDir = "public"
