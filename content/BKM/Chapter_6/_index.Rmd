@@ -1,7 +1,6 @@
 ---
 weight: 2
 title: "Chapter 6"
-author: "Ming Chen"
 output: html_document
 ---
 
@@ -12,17 +11,35 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 6.1 Risk and Risk Aversion
 
+## 6.2 Capital Allocation Across Risky and Risk-Free Portfolios
+
+## 6.3 The Risk Free Asset
+
+## 6.4 Portfolios of One Risky Asset and a Risk-Free Asset
+
+## 6.5 Risk Tolerance and Asset Allocation
+
+## 6.6 Passive Strategies: The Capital Market Line
+
+
+
 * Risk premium
   + Definition
+  
 * Fair Game
   + Definition
+  
 * Utility
   + Definition
+  
 * Certainty Equivalent Rate
   + Definition
+  
 * Risk Neutral
   + Definition
 
-{{% notice note %}}
-This is just a note
+$$ U = E(R) - \frac{1}{2} A \sigma^2 $$
+
+{{% notice definition %}}
+ test 
 {{% /notice %}}
