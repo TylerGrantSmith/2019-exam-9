@@ -5,7 +5,7 @@ baseURL = ""
 languageCode = "en-us"
 title = "2019 Exam 9"
 publishDir = "public"
-relativeurls = true
+#relativeurls = true
 #ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [outputs]

@@ -1,5 +1,5 @@
 ---
-weight: 2
+weight: 1
 title: "Chapter 6"
 output: html_document
 ---
