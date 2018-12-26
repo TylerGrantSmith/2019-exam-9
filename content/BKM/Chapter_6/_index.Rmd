@@ -11,6 +11,47 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 6.1 Risk and Risk Aversion
 
+```{r}
+library(ggplot2)
+library(magrittr)
+library(fbhelpers)
+library(latex2exp)
+
+x <- -100:100
+dat <- data.frame(x,y=3x^2)
+f <- function(x) 3*x^2
+dat %>% 
+  ggplot(aes(x,y)) + 
+    #geom_point()+
+    stat_function(fun = f, colour="blue", size = 1,
+                  xlim = c(25, 35)) +
+  theme_emblem() + 
+  geom_vline(xintercept = 30, linetype = "AA") +
+  geom_hline(yintercept = f(30), linetype = "AA") +
+  scale_x_continuous(breaks = c(30), 
+                     limits  = c(20,40),
+                     labels = TeX("$\\sigma_p$"),
+                     #expand = c(0.3,0.3)
+                     ) +
+  scale_y_continuous(breaks = c(f(30)), 
+                     labels = TeX("$E(r_P)$"),
+                     #expand = c(0.3, 0.3)
+                     ) +
+  ggtitle(TeX("$E(r)$")) + 
+  geom_point(x = 30, y = f(30), size = 2) + 
+  theme(plot.title = element_text(hjust = 0),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank()) + 
+   annotate("text", x = 39, y = f(35), label = "Indifference\nCurve") +
+    annotate("segment", 
+             x = 37, 
+             y = f(35), 
+             xend = 35, 
+             yend = f(35),
+             arrow = arrow(angle = 20, length = unit(2, "mm"), type = "closed"))
+  
+```
+
 ## 6.2 Capital Allocation Across Risky and Risk-Free Portfolios
 
 ## 6.3 The Risk Free Asset
