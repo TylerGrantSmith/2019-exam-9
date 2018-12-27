@@ -7,52 +7,94 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+knitr::knit_hooks$set(class = function(before, options, envir) {
+  if(before) {
+    sprintf("<div class = '%s'>", options$class)
+  } else {
+    "</div>"
+  }
+})
 ```
 
 ## 6.1 Risk and Risk Aversion
+$$ U = E(R) - \frac{1}{2} A \sigma^2 $$
 
-```{r fig.cap='diamonds plot with ggplot2.', tidy=FALSE}
+* Risk Averse
+  + $A < 0$
+
+* Risk-Neutral
+  + $A = 0$
+
+* Risk Lover
+  + $A > 0$
+
+{{% notice tip %}}
+**Mean-Variance (M-V) criterion** Portfolio `$A$` dominates portfolio $B$ if $E(r_A) >= E(r_B)$ and $\\sigma_A <= \sigma_B$, with one of the inequalities being strict.
+{{% /notice %}}
+
+{{% notice tip %}}
+**Indifference Curve** Curve in the mean-variance plane connecting all portfolio points with equal utility.
+{{% /notice %}}
+
+```{r indifference-curve, fig.cap = "Indifference curve", fig.width = 5, fig.height = 5, echo=FALSE, warning=FALSE}
 library(ggplot2)
 library(magrittr)
 library(fbhelpers)
 library(latex2exp)
 
 x <- -100:100
-f <- function(x) 3*x^2
+f <- function(x) x^2
 dat <- data.frame(x,y=f(x))
 dat %>% 
   ggplot(aes(x,y)) + 
-    #geom_point()+
-    stat_function(fun = f, colour="blue", size = 1,
-                  xlim = c(25, 35)) +
+  stat_function(fun = f, colour="blue", size = 1,
+                xlim = c(0, 10)) +
   theme_emblem() + 
-  geom_vline(xintercept = 30, linetype = "AA") +
-  geom_hline(yintercept = f(30), linetype = "AA") +
-  scale_x_continuous(breaks = c(30), 
-                     limits  = c(20,40),
+  geom_vline(xintercept = 5, linetype = "AA") +
+  geom_hline(yintercept = f(5), linetype = "AA") +
+  scale_x_continuous(breaks = c(5), 
+                     limits  = c(1,9),
                      labels = TeX("$\\sigma_p$"),
-                     #expand = c(0.3,0.3)
-                     ) +
-  scale_y_continuous(breaks = c(f(30)), 
+  ) +
+  scale_y_continuous(breaks = c(f(5)), 
+                     limits = c(0,100),
                      labels = TeX("$E(r_P)$"),
-                     #expand = c(0.3, 0.3)
-                     ) +
+  ) +
+  
   ggtitle(TeX("$E(r)$")) + 
-  geom_point(x = 30, y = f(30), size = 2) + 
+  
+  geom_point(x = 5, y = f(5), size = 2) + 
+  annotate("text", x = 5 + 0.25, y = f(5) - 2, label = "P") +
+  
+  geom_point(x = 7, y = f(7), size = 2) + 
+  annotate("text", x = 7 + 0.25, y = f(7), label = "Q") +
+  
   theme(plot.title = element_text(hjust = 0),
         axis.title.y = element_blank(),
-        axis.title.x = element_blank()) + 
-   annotate("text", x = 39, y = f(35), label = "Indifference\nCurve") +
-    annotate("segment", 
-             x = 37, 
-             y = f(35), 
-             xend = 35, 
-             yend = f(35),
-             arrow = arrow(angle = 20, length = unit(2, "mm"), type = "closed"))
+        axis.title.x = element_blank(),
+        axis.text = element_text(size = 12),
+        title = element_text(size = 15)) + 
   
+  theme(plot.background = element_rect(fill = "white")) +
+  
+  annotate("segment", 
+           x = 8, 
+           y = f(6), 
+           xend = 6, 
+           yend = f(6),
+           arrow = arrow(angle = 20, length = unit(2, "mm"), type = "closed")) + 
+  annotate("label", x = 8, y = f(6), label = "Indifference\nCurve",
+           color = "black")
+
 ```
 
+
+
 ## 6.2 Capital Allocation Across Risky and Risk-Free Portfolios
+
+{{% notice tip %}}
+**Complete Portfolio** The portfolio consisting of one's risk-free and *and* risky assets.
+{{% /notice %}}
 
 ## 6.3 The Risk Free Asset
 
@@ -65,22 +107,21 @@ dat %>%
 
 
 * Risk premium
-  + Definition
-  
-* Fair Game
-  + Definition
-  
-* Utility
-  + Definition
-  
-* Certainty Equivalent Rate
-  + Definition
-  
-* Risk Neutral
-  + Definition
++ Definition
 
-$$ U = E(R) - \frac{1}{2} A \sigma^2 $$
+* Fair Game
++ Definition
+
+* Utility
++ Definition
+
+* Certainty Equivalent Rate
++ Definition
+
+* Risk Neutral
++ Definition
+
 
 {{% notice definition %}}
- test 
+test 
 {{% /notice %}}
