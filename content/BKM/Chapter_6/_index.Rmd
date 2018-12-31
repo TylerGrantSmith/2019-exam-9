@@ -100,7 +100,35 @@ dat %>%
 
 ## 6.4 Portfolios of One Risky Asset and a Risk-Free Asset
 
+{{% notice warning %}}
+Nongovernmental investors cannot borrow at the risk-free rate.  Therefore, in the borrowing range of the CAL, the risk-free $r_f$ rate becomes the borrowing rate $r_B > r_f$ and as a result the CAL will be kinked.
+{{% /notice %}}
 ## 6.5 Risk Tolerance and Asset Allocation
+
+It is natural to ask what allocation(s) maximize utility.
+
+$$ \begin{align} \mathop{argmax}_y (U) &= E(r_C) - \frac{1}{2} A \sigma^2_C \\
+&= r_f + y[E(r_P) - r_f] - \frac{1}{2} A y^2 \sigma^2_P  \end{align}$$
+
+We proceed by taking the derivative of both sides with respect to $y$.  
+
+$$ \begin{align} 0 &= E(r_P) - r_f - Ay^*\sigma^2_P \\ \implies y^* &= \frac{E(r_P) - r_f}{A\sigma^2_P}   \end{align} $$
+
+Note that the risky allocation percentage is:
+
+* directly proportional to the risk premium of the risky asset
+* inversely proportional to the risk aversion of the investor
+* inversely proportional to the variance of the risky asset
+
+#### Example
+
+Suppose the risk aversion of an investor is 4, the risk-free rate is 7%, the expected
+return of the risky asset is 15% with standard deviation 22%.  What is the optimal
+percent investment in the risky-asset for this investor?
+
+$$y^* = \frac{0.15 - 0.07}{4 * 0.22^2} = `r scales::percent((0.15 - 0.07)/(4 * 0.22^2),1, suffix ='\\%')` $$
+
+With this optimal allocation, the return on the complete portfolio will be $E(r_C) = 0.07 + 0.41 \cdot (0.15 - 0.07) = 10.28\% $  The standard deviation will be $\sigma_C = 0.41 * 0.22 = 9.02\% $.
 
 ## 6.6 Passive Strategies: The Capital Market Line
 

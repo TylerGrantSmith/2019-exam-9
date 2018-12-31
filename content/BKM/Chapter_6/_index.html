@@ -47,9 +47,29 @@ Figure 1: Indifference curve
 </div>
 <div id="portfolios-of-one-risky-asset-and-a-risk-free-asset" class="section level2">
 <h2>6.4 Portfolios of One Risky Asset and a Risk-Free Asset</h2>
+<p>{{% notice warning %}}
+Nongovernmental investors cannot borrow at the risk-free rate. Therefore, in the borrowing range of the CAL, the risk-free <span class="math inline">\(r_f\)</span> rate becomes the borrowing rate <span class="math inline">\(r_B &gt; r_f\)</span> and as a result the CAL will be kinked.
+{{% /notice %}}
+## 6.5 Risk Tolerance and Asset Allocation</p>
+<p>It is natural to ask what allocation(s) maximize utility.</p>
+<p><span class="math display">\[ \begin{align} \mathop{argmax}_y (U) &amp;= E(r_C) - \frac{1}{2} A \sigma^2_C \\
+&amp;= r_f + y[E(r_P) - r_f] - \frac{1}{2} A y^2 \sigma^2_P  \end{align}\]</span></p>
+<p>We proceed by taking the derivative of both sides with respect to <span class="math inline">\(y\)</span>.</p>
+<p><span class="math display">\[ \begin{align} 0 &amp;= E(r_P) - r_f - Ay^*\sigma^2_P \\ \implies y^* &amp;= \frac{E(r_P) - r_f}{A\sigma^2_P}   \end{align} \]</span></p>
+<p>Note that the risky allocation percentage is:</p>
+<ul>
+<li>directly proportional to the risk premium of the risky asset</li>
+<li>inversely proportional to the risk aversion of the investor</li>
+<li>inversely proportional to the variance of the risky asset</li>
+</ul>
+<div id="example" class="section level4">
+<h4>Example</h4>
+<p>Suppose the risk aversion of an investor is 4, the risk-free rate is 7%, the expected
+return of the risky asset is 15% with standard deviation 22%. What is the optimal
+percent investment in the risky-asset for this investor?</p>
+<p><span class="math display">\[y^* = \frac{0.15 - 0.07}{4 * 0.22^2} = 41\% \]</span></p>
+<p>With this optimal allocation, the return on the complete portfolio will be $E(r_C) = 0.07 + 0.41 (0.15 - 0.07) = 10.28% $ The standard deviation will be $_C = 0.41 * 0.22 = 9.02% $.</p>
 </div>
-<div id="risk-tolerance-and-asset-allocation" class="section level2">
-<h2>6.5 Risk Tolerance and Asset Allocation</h2>
 </div>
 <div id="passive-strategies-the-capital-market-line" class="section level2">
 <h2>6.6 Passive Strategies: The Capital Market Line</h2>
